@@ -7,5 +7,8 @@ import {UserService} from './services/user/user.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  protected user = inject(UserService).getSingleUser();
+  private userService = inject(UserService);
+
+  protected user = this.userService.getSingleUser();
+  protected usersList = this.userService.getSeveralUsers(2);
 }

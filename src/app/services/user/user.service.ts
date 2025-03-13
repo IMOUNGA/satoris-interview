@@ -23,4 +23,16 @@ export class UserService {
 
     return toSignal(userObservable, {initialValue: null});
   }
+
+  getSeveralUsers(numberOfUser: number): Signal<User[] | null> {
+    const numberOfUserValid = numberOfUser > 5 ? 5 : numberOfUser;
+
+    const userObservable = this.httpClient.get<any>(`https://randomuser.me/api/?results=${numberOfUserValid}`)
+      .pipe(
+        map(data => data.results),
+        catchError(() => of(null))
+      );
+
+    return toSignal(userObservable, {initialValue: null});
+  }
 }

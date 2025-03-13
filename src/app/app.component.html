@@ -1,7 +1,12 @@
 @let userInfos = user();
+@let usersInfos = usersList();
 
-@if (userInfos) {
+@if (userInfos && usersInfos) {
   <h1>Welcome {{ userInfos.name?.first }} 🙂</h1>
+
+  @for (user of usersInfos; track user.login.uuid) {
+    <p>{{ user.name?.first }} {{ user.name?.last }}</p>
+  }
 } @else {
   <p>Loading ...</p>
 }
