@@ -1,13 +1,18 @@
 import {Component, input} from '@angular/core';
+import {CustomSvgIconComponent} from '../../../custom-svg-icon/custom-svg-icon.component';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'si-dashboard-item-picture',
-  imports: [],
+  imports: [
+    CustomSvgIconComponent,
+    NgIf
+  ],
   templateUrl: './dashboard-item-picture.component.html',
   styleUrl: './dashboard-item-picture.component.scss',
   standalone: true,
 })
 export class DashboardItemPictureComponent {
-  title = input.required<string>();
-  aboveLine = input<boolean>(true);
+  title = input<string>();
+  picture = input.required<string>();
 }
