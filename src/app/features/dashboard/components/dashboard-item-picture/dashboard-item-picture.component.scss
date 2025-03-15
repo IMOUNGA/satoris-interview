@@ -1,4 +1,4 @@
-@import "components/dashboard/styles/dashboard-mixin.scss";
+@import "features/dashboard/styles/dashboard-mixin";
 
 .item-container {
   @include dashboard-item;

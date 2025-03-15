@@ -1,6 +1,6 @@
 import {inject, Injectable, Signal} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {User} from '../../models/user';
+import {UserModel} from '../../../entities/user.model';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {catchError, map, of} from 'rxjs';
 
@@ -14,7 +14,7 @@ export class UserService {
 
   constructor() { }
 
-  getSingleUser(): Signal<User | null> {
+  getSingleUser(): Signal<UserModel | null> {
     const userObservable = this.httpClient.get<any>('https://randomuser.me/api/?results=1')
       .pipe(
         map(data => data.results[0]),
@@ -24,7 +24,7 @@ export class UserService {
     return toSignal(userObservable, {initialValue: null});
   }
 
-  getSeveralUsers(numberOfUser: number): Signal<User[] | null> {
+  getSeveralUsers(numberOfUser: number): Signal<UserModel[] | null> {
     const numberOfUserValid = numberOfUser > 5 ? 5 : numberOfUser;
 
     const userObservable = this.httpClient.get<any>(`https://randomuser.me/api/?results=${numberOfUserValid}`)

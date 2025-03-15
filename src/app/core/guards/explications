@@ -1,0 +1,2 @@
+The guards folder contains the guards that are used to protect the routes of the application. The guards are used to check if the user is allowed to access the route or not.
+Here, is just an example of organization of the core folder.

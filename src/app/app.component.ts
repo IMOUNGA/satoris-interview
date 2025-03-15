@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
-import {UserService} from './services/user/user.service';
-import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {UserService} from './core/services/user/user.service';
+import {DashboardComponent} from './features/dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',

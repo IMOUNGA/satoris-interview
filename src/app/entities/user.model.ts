@@ -1,4 +1,4 @@
-export interface User {
+export interface UserModel {
   gender: string;
   name: {
     title: string;
