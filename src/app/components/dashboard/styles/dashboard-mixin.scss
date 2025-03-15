@@ -1,0 +1,13 @@
+@mixin dashboard-item {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  height: 100%;
+  width: 100%;
+
+  padding: 1rem;
+}
+

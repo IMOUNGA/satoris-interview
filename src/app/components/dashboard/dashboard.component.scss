@@ -20,6 +20,10 @@
   border: 2px red solid;
 }
 
+.item {
+  border: 2px blue solid;
+}
+
 @media (min-width: 768px) {
   :host {
     width: 90vw;
@@ -29,10 +33,6 @@
   .main-container {
     grid-template-columns: repeat(3, 1fr) repeat(2, .5fr) 1fr;
     grid-template-rows: repeat(3, 1fr);
-  }
-
-  .item {
-    border: 2px blue solid;
   }
 
   .item-1 {

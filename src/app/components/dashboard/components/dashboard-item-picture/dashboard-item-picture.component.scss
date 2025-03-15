@@ -1,0 +1,6 @@
+@import "components/dashboard/styles/dashboard-mixin.scss";
+
+.item-container {
+  @include dashboard-item;
+}
+
