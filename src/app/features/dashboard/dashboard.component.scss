@@ -17,11 +17,6 @@
   grid-template-rows: repeat(6, 1fr);
   grid-column-gap: 0;
   grid-row-gap: 0;
-  border: 2px red solid;
-}
-
-.item {
-  border: 2px blue solid;
 }
 
 @media (min-width: 768px) {
