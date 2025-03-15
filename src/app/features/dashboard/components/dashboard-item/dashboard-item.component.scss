@@ -1,0 +1,10 @@
+@import "features/dashboard/styles/dashboard-mixin";
+
+.item-container {
+  @include dashboard-item;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  font-weight: bold;
+}

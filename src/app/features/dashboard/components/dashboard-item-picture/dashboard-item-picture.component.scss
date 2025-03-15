@@ -2,9 +2,14 @@
 
 .item-container {
   @include dashboard-item;
+  justify-content: flex-end;
+  align-items: flex-start;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  color: #fff;
 }
 
 .arrow-up {

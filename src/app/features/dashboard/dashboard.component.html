@@ -1,9 +1,13 @@
 <div class="main-container">
   <div class="item item-1">
-    <si-dashboard-item-picture title="Monica" picture="/images/image-exemple.jpg" />
+    <si-dashboard-item-picture title="Monica" picture="/images/image-exemple.jpg"/>
   </div>
-  <div class="item item-2">Hello 2</div>
-  <div class="item item-3">Hello 3</div>
+  <div class="item item-2">
+    <si-dashboard-item text="Female" backgroundColor="green" svgPath="gender" [svgSize]="48"/>
+  </div>
+  <div class="item item-3">
+    <si-dashboard-item text="Mexico" backgroundColor="orange" svgPath="city" [svgSize]="48"/>
+  </div>
   <div class="item item-4">Hello 4</div>
   <div class="item item-5">
     <si-dashboard-item-picture picture="/images/image-exemple.jpg"/>

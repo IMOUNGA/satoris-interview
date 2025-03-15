@@ -1,5 +1,5 @@
 import {Component, input} from '@angular/core';
-import {CustomSvgIconComponent} from '../../../../components/custom-svg-icon/custom-svg-icon.component';
+import {CustomSvgIconComponent} from '../../../../shared/components/custom-svg-icon/custom-svg-icon.component';
 import {NgIf} from '@angular/common';
 
 @Component({
