@@ -1,7 +1,15 @@
-<div
-  class="item-container"
-  [style.color]="textColor()"
-  [style.background-color]="backgroundColor()">
-  <si-custom-svg-icon [svgPath]="svgPath()!" [size]="svgSize()" />
-  <p>{{ text() }}</p>
-</div>
+@if (text()) {
+  <div
+    class="item-container"
+    [style.color]="textColor()"
+    [style.background-color]="backgroundColor()">
+    <si-custom-svg-icon [svgPath]="svgPath()!" [size]="svgSize()" />
+    <p>{{ text() }}</p>
+  </div>
+}
+
+@if (compass()) {
+  <div class="item-container" [style.background-color]="backgroundColor()">
+    <img src="/images/boussole.png" width="200" height="200" class="compass" />
+  </div>
+}

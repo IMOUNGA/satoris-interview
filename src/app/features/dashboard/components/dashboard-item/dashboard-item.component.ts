@@ -12,9 +12,10 @@ import {CustomSvgIconComponent} from '../../../../shared/components/custom-svg-i
   styleUrl: './dashboard-item.component.scss'
 })
 export class DashboardItemComponent {
-  text = input.required<string>();
+  text = input<string>();
   backgroundColor = input<CssColor>('white');
   textColor = input<CssColor>('black');
   svgPath = input<SVGName>();
   svgSize = input<SVGSizes>(24);
+  compass = input<boolean>(false);
 }
