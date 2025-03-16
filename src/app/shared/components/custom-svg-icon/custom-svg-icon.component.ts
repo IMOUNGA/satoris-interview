@@ -15,7 +15,6 @@ export class CustomSvgIconComponent {
   size = input<SVGSizes>(24);
 
   getSvgPath(): string {
-    console.log('svgPath', this.svgPath());
     return `svg/${this.svgPath()}.svg`;
   }
 
