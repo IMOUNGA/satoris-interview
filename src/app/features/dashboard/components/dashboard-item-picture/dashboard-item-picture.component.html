@@ -1,6 +1,7 @@
 <div
   class="item-container"
   [style.background-image]="'url(\'' + picture() + '\')'">
+  <div class="overlay"></div>
   <p *ngIf="title()">{{ title() }}</p>
   <hr>
   <div class="discover-container">
