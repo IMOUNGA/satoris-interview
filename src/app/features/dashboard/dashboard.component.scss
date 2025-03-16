@@ -17,6 +17,10 @@
   grid-template-rows: repeat(6, 1fr);
   grid-column-gap: 0;
   grid-row-gap: 0;
+
+  opacity: 0;
+  transform: translateX(250px);
+  animation: slideRight 2s ease forwards;
 }
 
 @media (min-width: 768px) {
@@ -58,5 +62,17 @@
 @media (min-width: 992px) {
   :host {
     height: 70vh;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
