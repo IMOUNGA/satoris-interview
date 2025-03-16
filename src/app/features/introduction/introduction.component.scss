@@ -1,0 +1,51 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 3rem;
+
+  scale: 1;
+  animation: scaleOutForwardCenter .5s ease-in-out forwards;
+  animation-delay: 4s;
+}
+
+.first-animation {
+  opacity: 0;
+  animation: slideIn 1s ease forwards;
+}
+
+.second-animation {
+  opacity: 0;
+  animation: slideIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.third-animation {
+  opacity: 0;
+  animation: slideIn 1s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes scaleOutForwardCenter {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

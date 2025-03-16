@@ -11,5 +11,10 @@
   <p>Loading ...</p>
 }-->
 <main class="main">
-  <si-dashboard />
+  @if (showDashboard) {
+    <si-dashboard />
+  } @else {
+    <si-introduction />
+  }
+  <!--<si-dashboard />-->
 </main>
