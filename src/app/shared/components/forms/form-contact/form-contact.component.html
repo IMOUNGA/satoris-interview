@@ -21,7 +21,14 @@
       </button>
     </form>
   } @else {
-    <div class="loading"></div>
+    <div class="submitting-container">
+      <div class="success-text" *ngIf="submitted">
+        <p>Super ! 🎉</p>
+        <p>Les données ont été envoyés avec succès 🚀</p>
+      </div>
+      <div class="loading"></div>
+    </div>
+
   }
 </div>
 

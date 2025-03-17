@@ -34,8 +34,11 @@ export class FormContactComponent {
     if (this.form.valid) {
       this.loading = true;
       await this.sleep(2000);
+      this.submitted = true;
+      await this.sleep(3000);
       this.form.reset();
       this.loading = false;
+      this.submitted = false;
     }
   }
 }
