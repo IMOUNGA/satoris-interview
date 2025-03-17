@@ -60,8 +60,6 @@
   gap: 1rem;
   padding: 1rem;
   border-top: 1px solid #e8e8e8;
-  text-overflow: ellipsis;
-  overflow: hidden;
   cursor: pointer;
 
   transition: background-color 0.3s, color 0.3s;
@@ -73,13 +71,18 @@
 }
 
 .modal-list-item-picture {
+  flex-shrink: 0;
   width: 2rem;
   height: 2rem;
   background-color: #2e6bf6;
   background-position: center;
   background-size: cover;
   border-radius: 50%;
-  object-fit: cover;
+}
+
+p {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (min-width: 768px) {
