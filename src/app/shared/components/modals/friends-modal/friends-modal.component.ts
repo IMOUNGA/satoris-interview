@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import {Component, input, model} from '@angular/core';
 import {UserModel} from '../../../../entities/user.model';
 import {NgIf} from '@angular/common';
 
@@ -12,4 +12,9 @@ import {NgIf} from '@angular/common';
 })
 export class FriendsModalComponent {
   friendsList = input<UserModel[]>();
+  activeModal = model<boolean>(false);
+
+  updateActiveModal(): void {
+    this.activeModal.update(() => !this.activeModal());
+  }
 }

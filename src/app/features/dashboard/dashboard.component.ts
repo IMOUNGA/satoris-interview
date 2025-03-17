@@ -22,9 +22,14 @@ import {FriendsModalComponent} from '../../shared/components/modals/friends-moda
 })
 export class DashboardComponent {
   initialActiveForm = false;
+  initialActiveFriendsList = false;
 
   onActiveFormUpdate(active: boolean): void {
     this.initialActiveForm = active;
+  }
+
+  onActiveFriendsListUpdate(active: boolean): void {
+    this.initialActiveFriendsList = active;
   }
 
 }
