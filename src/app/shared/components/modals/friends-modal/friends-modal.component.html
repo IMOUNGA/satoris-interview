@@ -1,0 +1,35 @@
+<div class="friends-modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <p>Amis</p>
+      <p>Nombre d'amis</p>
+    </div>
+    <div class="modal-list">
+      <div class="modal-list-item">
+        <div class="modal-list-item-picture"></div>
+        <p>Martha</p>
+        <p>Crence</p>
+        <p>tttt.fr</p>
+      </div>
+      <div class="modal-list-item">
+        <div class="modal-list-item-picture"></div>
+        <p>Martha</p>
+        <p>Crence</p>
+        <p>tttt.fr</p>
+      </div>
+      <div class="modal-list-item">
+        <div class="modal-list-item-picture"></div>
+        <p>Martha</p>
+        <p>Crence</p>
+        <p>tttt.fr</p>
+      </div>
+      @for (friend of friendsList(); track friend.id) {
+        <div class="modal-list-item">
+          <div class="modal-list-item-picture" [style.background-image]="'url(\'' + friend.picture + '\')'"></div>
+          <p>{{ friend.name }}</p>
+          <p>{{ friend.email }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</div>

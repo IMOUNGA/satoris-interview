@@ -4,6 +4,7 @@ import {DashboardItemComponent} from './components/dashboard-item/dashboard-item
 import {EmbedGoogleMapsComponent} from '../../shared/components/embed-google-maps/embed-google-maps.component';
 import {FormContactComponent} from '../../shared/components/forms/form-contact/form-contact.component';
 import {NgIf} from '@angular/common';
+import {FriendsModalComponent} from '../../shared/components/modals/friends-modal/friends-modal.component';
 
 @Component({
   selector: 'si-dashboard',
@@ -12,7 +13,8 @@ import {NgIf} from '@angular/common';
     DashboardItemComponent,
     EmbedGoogleMapsComponent,
     FormContactComponent,
-    NgIf
+    NgIf,
+    FriendsModalComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',

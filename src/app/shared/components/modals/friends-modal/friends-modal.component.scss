@@ -1,0 +1,74 @@
+.friends-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  :first-child {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+.modal-list {
+  > :last-child {
+    border-bottom: 1px solid #e8e8e8;
+  }
+}
+
+.modal-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-top: 1px solid #e8e8e8;
+  text-overflow: ellipsis;
+  cursor: pointer;
+
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #2e6bf6;
+    color: #fff;
+  }
+}
+
+.modal-list-item-picture {
+  width: 2rem;
+  height: 2rem;
+  background-color: #2e6bf6;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    height: 60%;
+    width: 50%;
+  }
+}
