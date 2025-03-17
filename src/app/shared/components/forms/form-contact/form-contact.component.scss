@@ -66,8 +66,50 @@ form {
   color: #fff;
 }
 
+.loading {
+  position: relative;
+  border-radius: .5rem;
+  padding: 1rem;
+  background-color: #f3f3f3;
+  overflow: hidden;
+
+  &::before {
+    content: "Chargement...";
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 100%;
+
+    background-color: red;
+    border-radius: .5rem;
+    font-weight: bold;
+    color: #fff;
+
+    animation: loadingBackground 1.5s forwards ease-in-out;
+  }
+}
+
 @media (min-width: 768px) {
   .form-container {
     width: 50%;
+  }
+}
+
+@keyframes loadingBackground {
+  0% {
+    background-color: #fff;
+    width: 0;
+  }
+
+  100% {
+    background-color: #2e6bf6;
+    width: 100%;
   }
 }

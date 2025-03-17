@@ -33,7 +33,7 @@ export class FormContactComponent {
   async onSubmit() {
     if (this.form.valid) {
       this.loading = true;
-      await this.sleep(1000);
+      await this.sleep(2000);
       this.form.reset();
       this.loading = false;
     }
