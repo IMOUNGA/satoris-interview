@@ -1,12 +1,14 @@
 import {Component, model} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {NgIf} from '@angular/common';
+import {SimpleButtonDirective} from '../../../directives/buttons/simple-button/simple-button.directive';
 
 @Component({
   selector: 'si-form-contact',
   imports: [
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    SimpleButtonDirective
   ],
   templateUrl: './form-contact.component.html',
   styleUrl: './form-contact.component.scss',

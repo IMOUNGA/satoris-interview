@@ -15,7 +15,9 @@
         </label>
       </div>
 
-      <button type="submit"
+      <button siSimpleButton
+              [siSimpleButtonColor]="'#04a504'"
+              type="submit"
               [class.active]="form.valid"
               [disabled]="form.invalid">S'enregistrer
       </button>
