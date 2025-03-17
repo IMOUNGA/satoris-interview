@@ -1,16 +1,19 @@
 <div class="form-container">
   @if (!loading) {
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <label>
-        Email:
-        <input type="email" formControlName="email" required />
-        <p class="error" *ngIf="isFieldInvalid('email')">L'email est obligatoire</p>
-      </label>
-      <label>
-        Prénom :
-        <input type="text" formControlName="name" required />
-        <p class="error" *ngIf="isFieldInvalid('name')">Le nom est obligatoire</p>
-      </label>
+      <div class="item-container">
+        <p class="form-title">Enregistre toi</p>
+        <label class="item">
+          Email
+          <input type="email" formControlName="email" placeholder="Entre ton email" />
+          <p class="error" *ngIf="isFieldInvalid('email')">L'email est obligatoire</p>
+        </label>
+        <label class="item">
+          Prénom
+          <input type="text" formControlName="name" placeholder="Entre ton prénom" />
+          <p class="error" *ngIf="isFieldInvalid('name')">Le nom est obligatoire</p>
+        </label>
+      </div>
 
       <button type="submit" [disabled]="form.invalid">S'enregistrer</button>
     </form>
