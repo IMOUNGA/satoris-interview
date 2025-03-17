@@ -1,35 +1,27 @@
+@let friends = friendsList();
+
 <div class="friends-modal-container">
   <div class="modal">
-    <div class="modal-header">
-      <p>Amis</p>
-      <p>Nombre d'amis</p>
-    </div>
-    <div class="modal-list">
-      <div class="modal-list-item">
-        <div class="modal-list-item-picture"></div>
-        <p>Martha</p>
-        <p>Crence</p>
-        <p>tttt.fr</p>
+    <div class="modal-content" *ngIf="friends">
+      <div class="modal-header">
+        <p>Amis</p>
+        <p>Nombre d'amis</p>
       </div>
       <div class="modal-list-item">
         <div class="modal-list-item-picture"></div>
-        <p>Martha</p>
-        <p>Crence</p>
-        <p>tttt.fr</p>
+        <p>fdf</p>
+        <p>fdfd</p>
+        <p>fdfd</p>
       </div>
-      <div class="modal-list-item">
-        <div class="modal-list-item-picture"></div>
-        <p>Martha</p>
-        <p>Crence</p>
-        <p>tttt.fr</p>
-      </div>
-      @for (friend of friendsList(); track friend.id) {
+      @for (friend of friends; track friend.id) {
         <div class="modal-list-item">
           <div class="modal-list-item-picture" [style.background-image]="'url(\'' + friend.picture + '\')'"></div>
-          <p>{{ friend.name }}</p>
+          <p>{{ friend.name.first }}</p>
+          <p>{{ friend.name.last }}</p>
           <p>{{ friend.email }}</p>
         </div>
       }
     </div>
+    <button>Fermer</button>
   </div>
 </div>
