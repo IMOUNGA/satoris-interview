@@ -1,10 +1,15 @@
+@let user = userLoad();
+@let users = usersList();
+
 <div class="main-container">
   <div class="dashboard-container">
     <div class="item item-1">
-      <si-dashboard-item-picture title="Monica" picture="/images/image-exemple.jpg"/>
+      <si-dashboard-item-picture
+        [title]="user.name.first + ' ' + user.name.last.toUpperCase()"
+        [picture]="user.picture.large"/>
     </div>
     <div class="item item-2">
-      <si-dashboard-item type="text" text="Female" backgroundColor="green" svgPath="gender" [svgSize]="48"/>
+      <si-dashboard-item type="text" [text]="user.gender" backgroundColor="green" svgPath="gender" [svgSize]="48"/>
     </div>
     <div class="item item-3">
       <si-dashboard-item type="form" backgroundColor="orange" svgPath="city"
@@ -22,11 +27,14 @@
     </div>
     <div class="item item-6">
       <si-embed-google-maps
-        street="Avenue du Maréchal de Luxembourg"
-        [num]="36"
-        city="Meaux" />
+        [street]="user.location.street.name"
+        [num]="user.location.street.number"
+        [city]="user.location.city" />
     </div>
   </div>
   <si-form-contact *ngIf="initialActiveForm" [(activeForm)]="initialActiveForm"/>
-  <si-friends-modal *ngIf="initialActiveFriendsList" [(activeModal)]="initialActiveFriendsList" />
+  <si-friends-modal
+    *ngIf="initialActiveFriendsList"
+    [(activeModal)]="initialActiveFriendsList"
+    [friendsList]="users" />
 </div>

@@ -2,20 +2,14 @@
 
 <div class="friends-modal-container">
   <div class="modal">
-    <div class="modal-content" *ngIf="friends">
+    <div class="modal-content">
       <div class="modal-header">
         <p>Amis</p>
-        <p>Nombre d'amis</p>
-      </div>
-      <div class="modal-list-item">
-        <div class="modal-list-item-picture"></div>
-        <p>fdf</p>
-        <p>fdfd</p>
-        <p>fdfd</p>
+        <p *ngIf="friends">{{ getFriendsNumberLabel() }}</p>
       </div>
       @for (friend of friends; track friend.id) {
         <div class="modal-list-item">
-          <div class="modal-list-item-picture" [style.background-image]="'url(\'' + friend.picture + '\')'"></div>
+          <div class="modal-list-item-picture" [style.background-image]="'url(\'' + friend.picture.medium + '\')'"></div>
           <p>{{ friend.name.first }}</p>
           <p>{{ friend.name.last }}</p>
           <p>{{ friend.email }}</p>

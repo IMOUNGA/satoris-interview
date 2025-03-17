@@ -15,7 +15,7 @@ import {IntroductionComponent} from './features/introduction/introduction.compon
 export class AppComponent implements OnInit {
   private userService = inject(UserService);
   protected user = this.userService.getSingleUser();
-  protected usersList = this.userService.getSeveralUsers(2);
+  protected usersList = this.userService.getSeveralUsers(4);
   showDashboard = false;
 
   ngOnInit() {

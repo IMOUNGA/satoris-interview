@@ -1,22 +1,7 @@
-<!--@let userInfos = user();
-@let usersInfos = usersList();
-
-@if (userInfos && usersInfos) {
-  <h1>Welcome {{ userInfos.name?.first }} 🙂</h1>
-
-  @for (user of usersInfos; track user.login.uuid) {
-    <p>{{ user.name?.first }} {{ user.name?.last }}</p>
-  }
-} @else {
-  <p>Loading ...</p>
-}-->
 <main class="main">
-  <!--@if (showDashboard) {
-    <div>
-      <si-dashboard />
-    </div>
-  } @else {
+  @if (!showDashboard) {
     <si-introduction />
-  }-->
-  <si-dashboard />
+  } @else {
+    <si-dashboard [userLoad]="user()!" [usersList]="usersList()!" />
+  }
 </main>
