@@ -1,6 +1,7 @@
 <div class="form-container">
   @if (!loading) {
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
       <div class="item-container">
         <p class="form-title">Enregistre toi</p>
         <label class="item">
@@ -18,8 +19,8 @@
       <button siSimpleButton
               [siSimpleButtonColor]="'#04a504'"
               type="submit"
-              [class.active]="form.valid"
-              [disabled]="form.invalid">S'enregistrer
+              [disabled]="form.invalid">
+        S'enregistrer
       </button>
     </form>
   } @else {

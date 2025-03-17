@@ -6,7 +6,7 @@
       class="item-container"
       [style.color]="textColor()"
       [style.background-color]="backgroundColor()">
-      <si-custom-svg-icon [svgPath]="svgPath()!" [size]="svgSize()" />
+      <si-custom-svg-icon [svgPath]="svgPath()!" [svgSize]="svgSize()" />
       <p>{{ text() }}</p>
     </div>
   }
@@ -20,7 +20,7 @@
   @case ('form') {
     <div class="item-container mail-bouncing"
          [style.background-color]="backgroundColor()" (click)="updateActiveForm()">
-      <si-custom-svg-icon svgPath="mail" [size]="64" />
+      <si-custom-svg-icon svgPath="mail" [svgSize]="64" />
     </div>
   }
 }

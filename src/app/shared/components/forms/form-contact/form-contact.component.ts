@@ -1,4 +1,4 @@
-import {Component, model} from '@angular/core';
+import {Component, model, ModelSignal} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {NgIf} from '@angular/common';
 import {SimpleButtonDirective} from '../../../directives/buttons/simple-button/simple-button.directive';
@@ -14,9 +14,9 @@ import {SimpleButtonDirective} from '../../../directives/buttons/simple-button/s
   styleUrl: './form-contact.component.scss',
 })
 export class FormContactComponent {
+  activeForm: ModelSignal<boolean> = model(false)
   loading = false;
   submitted = false;
-  activeForm = model<boolean>(false)
   form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),

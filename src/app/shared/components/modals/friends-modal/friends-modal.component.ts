@@ -1,7 +1,6 @@
 import {Component, input, model} from '@angular/core';
 import {UserModel} from '../../../../entities/user.model';
 import {NgIf} from '@angular/common';
-import {first} from 'rxjs';
 import {SimpleButtonDirective} from '../../../directives/buttons/simple-button/simple-button.directive';
 
 @Component({

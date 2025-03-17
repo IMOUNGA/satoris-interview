@@ -48,8 +48,6 @@ form {
   }
 }
 
-
-
 .submitting-container {
   display: flex;
   flex-direction: column;
@@ -76,11 +74,6 @@ form {
   font-size: .8rem;
 }
 
-.active {
-  background-color: #04a504;
-  color: #fff;
-}
-
 .loading {
   position: relative;
   width: 100%;
@@ -103,7 +96,6 @@ form {
     width: 0;
     height: 100%;
 
-    background-color: red;
     border-radius: .5rem;
     font-weight: bold;
     color: #fff;

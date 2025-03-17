@@ -7,12 +7,13 @@ import {SVGName, SVGSizes} from '../../types/svg.type';
   imports: [],
   templateUrl: './custom-svg-icon.component.html',
   styleUrl: './custom-svg-icon.component.scss',
-  standalone: true,
 })
 export class CustomSvgIconComponent {
+  /** This component is used to display an SVG icon. */
+
   svgPath = input.required<SVGName>();
   color = input<CssColor>('black');
-  size = input<SVGSizes>(24);
+  svgSize = input<SVGSizes>(24);
 
   getSvgPath(): string {
     return `svg/${this.svgPath()}.svg`;
