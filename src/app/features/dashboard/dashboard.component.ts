@@ -1,4 +1,4 @@
-import {Component, input, InputSignal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, InputSignal} from '@angular/core';
 import {DashboardItemPictureComponent} from './components/dashboard-item-picture/dashboard-item-picture.component';
 import {DashboardItemComponent} from './components/dashboard-item/dashboard-item.component';
 import {EmbedGoogleMapsComponent} from '../../shared/components/embed-google-maps/embed-google-maps.component';
@@ -15,7 +15,7 @@ import {UserModel} from '../../entities/user.model';
     EmbedGoogleMapsComponent,
     FormContactComponent,
     NgIf,
-    FriendsModalComponent
+    FriendsModalComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',

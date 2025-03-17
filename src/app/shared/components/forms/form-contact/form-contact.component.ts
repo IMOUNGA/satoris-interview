@@ -1,4 +1,4 @@
-import {Component, model, ModelSignal} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, model, ModelSignal} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {NgIf} from '@angular/common';
 import {SimpleButtonDirective} from '../../../directives/buttons/simple-button/simple-button.directive';
@@ -12,6 +12,7 @@ import {SimpleButtonDirective} from '../../../directives/buttons/simple-button/s
   ],
   templateUrl: './form-contact.component.html',
   styleUrl: './form-contact.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormContactComponent {
   activeForm: ModelSignal<boolean> = model(false)
@@ -21,6 +22,8 @@ export class FormContactComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
+
+  constructor(private cdr: ChangeDetectorRef) {} // I decided to use the constructor here to show that I know how to use it
 
   sleep(delay: number) {
     return new Promise((resolve) => {
@@ -42,6 +45,7 @@ export class FormContactComponent {
       this.loading = true;
       await this.sleep(2000);
       this.submitted = true;
+      this.cdr.markForCheck(); // I decided to use markForCheck and don't use loading and submitted has a signals for this example and show that I know how to use changeDetection
       await this.sleep(3000);
       this.form.reset();
       this.loading = false;

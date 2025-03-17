@@ -1,4 +1,4 @@
-import {Component, input, OnInit, output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, InputSignal, OnInit, output, OutputEmitterRef} from '@angular/core';
 import {CssColor} from '../../../../shared/types/colors.type';
 import {SVGName, SVGSizes} from '../../../../shared/types/svg.type';
 import {CustomSvgIconComponent} from '../../../../shared/components/custom-svg-icon/custom-svg-icon.component';
@@ -11,20 +11,20 @@ type DashboardItemType = 'text' | 'svg' | 'compass' | 'form';
     CustomSvgIconComponent,
   ],
   templateUrl: './dashboard-item.component.html',
-  styleUrl: './dashboard-item.component.scss'
+  styleUrl: './dashboard-item.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardItemComponent implements OnInit {
   /** This is a dashboard item component. With this Component can create dashboard-items with text and icon */
 
-  type = input.required<DashboardItemType>();
-  backgroundColor = input<CssColor>('white');
-  textColor = input<CssColor>('black');
-  text = input<string>();
-  svgPath = input<SVGName>();
-  svgSize = input<SVGSizes>(24);
-  activeForm = input<boolean>();
-
-  onActiveFormUpdate = output<boolean>();
+  type: InputSignal<DashboardItemType> = input.required<DashboardItemType>();
+  backgroundColor: InputSignal<CssColor> = input<CssColor>('white');
+  textColor: InputSignal<CssColor> = input<CssColor>('black');
+  text: InputSignal<string | undefined> = input<string>();
+  svgPath: InputSignal<SVGName | undefined> = input<SVGName>();
+  svgSize: InputSignal<SVGSizes> = input<SVGSizes>(24);
+  activeForm: InputSignal<boolean | undefined> = input<boolean>();
+  onActiveFormUpdate: OutputEmitterRef<boolean> = output<boolean>();
 
   ngOnInit() {
     this.validInputs();

@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, InputSignal} from '@angular/core';
 import {CssColor} from '../../types/colors.type';
 import {SVGName, SVGSizes} from '../../types/svg.type';
 
@@ -7,13 +7,14 @@ import {SVGName, SVGSizes} from '../../types/svg.type';
   imports: [],
   templateUrl: './custom-svg-icon.component.html',
   styleUrl: './custom-svg-icon.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomSvgIconComponent {
   /** This component is used to display an SVG icon. */
 
-  svgPath = input.required<SVGName>();
-  color = input<CssColor>('black');
-  svgSize = input<SVGSizes>(24);
+  svgPath: InputSignal<SVGName> = input.required<SVGName>();
+  color: InputSignal<CssColor> = input<CssColor>('black');
+  svgSize: InputSignal<SVGSizes> = input<SVGSizes>(24);
 
   getSvgPath(): string {
     return `svg/${this.svgPath()}.svg`;

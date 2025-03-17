@@ -1,4 +1,4 @@
-import {Component, input, model} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, model} from '@angular/core';
 import {UserModel} from '../../../../entities/user.model';
 import {NgIf} from '@angular/common';
 import {SimpleButtonDirective} from '../../../directives/buttons/simple-button/simple-button.directive';
@@ -10,7 +10,8 @@ import {SimpleButtonDirective} from '../../../directives/buttons/simple-button/s
     SimpleButtonDirective
   ],
   templateUrl: './friends-modal.component.html',
-  styleUrl: './friends-modal.component.scss'
+  styleUrl: './friends-modal.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FriendsModalComponent {
   friendsList = input<UserModel[]>();

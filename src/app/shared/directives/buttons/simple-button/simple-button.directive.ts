@@ -1,9 +1,11 @@
-import {Directive, ElementRef, HostBinding, input, OnInit} from '@angular/core';
+import {Directive, ElementRef, HostBinding, inject, input, OnInit} from '@angular/core';
 
 @Directive({
   selector: '[siSimpleButton]'
 })
 export class SimpleButtonDirective implements OnInit {
+  private el: ElementRef = inject(ElementRef);
+
   siSimpleButtonColor = input<string>('#2e6bf6');
 
   @HostBinding('style.opacity') get opacity() {
@@ -13,8 +15,6 @@ export class SimpleButtonDirective implements OnInit {
   @HostBinding('style.cursor') get cursor() {
     return this.el.nativeElement.disabled ? 'not-allowed' : 'pointer';
   }
-
-  constructor(private el: ElementRef) { }
 
   ngOnInit() {
     this.setStyle();

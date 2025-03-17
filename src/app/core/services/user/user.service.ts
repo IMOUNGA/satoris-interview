@@ -12,8 +12,6 @@ import {catchError, map, of} from 'rxjs';
 export class UserService {
   protected httpClient = inject(HttpClient);
 
-  constructor() { }
-
   getSingleUser(): Signal<UserModel | null> {
     const userObservable = this.httpClient.get<any>('https://randomuser.me/api/?results=1')
       .pipe(
