@@ -15,4 +15,5 @@ import {NgIf} from '@angular/common';
 export class DashboardItemPictureComponent {
   title = input<string>();
   picture = input.required<string>();
+  description = input<string>('Découvrez moi');
 }

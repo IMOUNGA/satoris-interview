@@ -1,11 +1,13 @@
+@let titleTemplate = title();
+
 <div
   class="item-container"
   [style.background-image]="'url(\'' + picture() + '\')'">
   <div class="overlay"></div>
-  <p *ngIf="title()">{{ title() }}</p>
+  <p *ngIf="titleTemplate">{{ titleTemplate }}</p>
   <hr>
   <div class="discover-container">
-    <p>Découvrez moi</p>
+    <p>{{ description() }}</p>
     <si-custom-svg-icon svgPath="arrow-up" color="white" />
   </div>
 </div>
