@@ -1,4 +1,4 @@
-import {Component, input, OnInit} from '@angular/core';
+import {Component, input, OnInit, output} from '@angular/core';
 import {CssColor} from '../../../../shared/types/colors.type';
 import {SVGName, SVGSizes} from '../../../../shared/types/svg.type';
 import {CustomSvgIconComponent} from '../../../../shared/components/custom-svg-icon/custom-svg-icon.component';
@@ -20,12 +20,15 @@ export class DashboardItemComponent implements OnInit {
   text = input<string>();
   svgPath = input<SVGName>();
   svgSize = input<SVGSizes>(24);
+  activeForm = input<boolean>();
+
+  onActiveFormUpdate = output<boolean>();
 
   ngOnInit() {
     this.validInputs();
   }
 
-  validInputs() {
+  validInputs(): void {
     switch (this.type()) {
       case 'text':
         if (!this.text()) {
@@ -37,6 +40,14 @@ export class DashboardItemComponent implements OnInit {
           console.error("DashBoardItemComponent: svgPath is required for type 'svg'");
         }
         break;
+      case 'form':
+        if (this.activeForm() === undefined) {
+          console.error("DashBoardItemComponent: an input activeForm is required for type 'form'");
+        }
     }
+  }
+
+  updateActiveForm(): void {
+    this.onActiveFormUpdate.emit(!this.activeForm());
   }
 }

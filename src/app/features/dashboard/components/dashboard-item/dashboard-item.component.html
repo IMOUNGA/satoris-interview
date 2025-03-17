@@ -17,7 +17,8 @@
 }
 
 @if (selectedType === 'form') {
-  <div class="item-container mail-bouncing" [style.background-color]="backgroundColor()">
+  <div class="item-container mail-bouncing"
+       [style.background-color]="backgroundColor()" (click)="updateActiveForm()">
     <si-custom-svg-icon svgPath="mail" [size]="64" />
   </div>
 }
