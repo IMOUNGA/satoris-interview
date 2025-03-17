@@ -8,7 +8,7 @@
     </div>
     <div class="item item-3">
       <si-dashboard-item type="form" backgroundColor="orange" svgPath="city"
-                         [activeForm]="activeForm"
+                         [activeForm]="initialActiveForm"
                          (onActiveFormUpdate)="onActiveFormUpdate($event)"/>
     </div>
     <div class="item item-4">
@@ -24,5 +24,5 @@
         city="Meaux" />
     </div>
   </div>
-  <si-form-contact />
+  <si-form-contact *ngIf="initialActiveForm" [(activeForm)]="initialActiveForm"/>
 </div>

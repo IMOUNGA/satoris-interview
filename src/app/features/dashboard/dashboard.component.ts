@@ -3,6 +3,7 @@ import {DashboardItemPictureComponent} from './components/dashboard-item-picture
 import {DashboardItemComponent} from './components/dashboard-item/dashboard-item.component';
 import {EmbedGoogleMapsComponent} from '../../shared/components/embed-google-maps/embed-google-maps.component';
 import {FormContactComponent} from '../../shared/components/forms/form-contact/form-contact.component';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'si-dashboard',
@@ -10,17 +11,18 @@ import {FormContactComponent} from '../../shared/components/forms/form-contact/f
     DashboardItemPictureComponent,
     DashboardItemComponent,
     EmbedGoogleMapsComponent,
-    FormContactComponent
+    FormContactComponent,
+    NgIf
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   standalone: true,
 })
 export class DashboardComponent {
-  activeForm = false;
+  initialActiveForm = false;
 
   onActiveFormUpdate(active: boolean): void {
-    this.activeForm = active;
+    this.initialActiveForm = active;
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, model} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {NgIf} from '@angular/common';
 
@@ -9,11 +9,12 @@ import {NgIf} from '@angular/common';
     NgIf
   ],
   templateUrl: './form-contact.component.html',
-  styleUrl: './form-contact.component.scss'
+  styleUrl: './form-contact.component.scss',
 })
 export class FormContactComponent {
   loading = false;
   submitted = false;
+  activeForm = model<boolean>(false)
   form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -30,6 +31,10 @@ export class FormContactComponent {
     return input?.invalid && (input.dirty || input.touched);
   }
 
+  updateActiveForm(): void {
+    this.activeForm.update(() => !this.activeForm())
+  }
+
   async onSubmit() {
     if (this.form.valid) {
       this.loading = true;
@@ -39,6 +44,7 @@ export class FormContactComponent {
       this.form.reset();
       this.loading = false;
       this.submitted = false;
+      this.updateActiveForm();
     }
   }
 }
