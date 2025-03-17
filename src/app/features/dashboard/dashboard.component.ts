@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import {Component, input, InputSignal} from '@angular/core';
 import {DashboardItemPictureComponent} from './components/dashboard-item-picture/dashboard-item-picture.component';
 import {DashboardItemComponent} from './components/dashboard-item/dashboard-item.component';
 import {EmbedGoogleMapsComponent} from '../../shared/components/embed-google-maps/embed-google-maps.component';
@@ -22,10 +22,12 @@ import {UserModel} from '../../entities/user.model';
   standalone: true,
 })
 export class DashboardComponent {
-  userLoad = input.required<UserModel>();
-  usersList = input.required<UserModel[]>();
-  initialActiveForm = false;
-  initialActiveFriendsList = false;
+  /** This is a dashboard component. It's the big manager wich can create dashboard-items-* */
+
+  userLoad: InputSignal<UserModel> = input.required<UserModel>();
+  usersList: InputSignal<UserModel[]> = input.required<UserModel[]>();
+  initialActiveForm: boolean = false;
+  initialActiveFriendsList: boolean = false;
 
   onActiveFormUpdate(active: boolean): void {
     this.initialActiveForm = active;

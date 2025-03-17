@@ -13,6 +13,8 @@ import {NgIf} from '@angular/common';
   standalone: true,
 })
 export class DashboardItemPictureComponent {
+  /** This component is used to display an item with a picture on the background with a title and a description */
+
   title = input<string>();
   picture = input.required<string>();
   description = input<string>('Découvrez moi');

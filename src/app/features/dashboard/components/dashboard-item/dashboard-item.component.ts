@@ -14,6 +14,8 @@ type DashboardItemType = 'text' | 'svg' | 'compass' | 'form';
   styleUrl: './dashboard-item.component.scss'
 })
 export class DashboardItemComponent implements OnInit {
+  /** This is a dashboard item component. With this Component can create dashboard-items with text and icon */
+
   type = input.required<DashboardItemType>();
   backgroundColor = input<CssColor>('white');
   textColor = input<CssColor>('black');

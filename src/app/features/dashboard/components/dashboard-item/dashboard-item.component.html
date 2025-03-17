@@ -1,24 +1,26 @@
 @let selectedType = type();
 
-@if (selectedType === 'text') {
-  <div
-    class="item-container"
-    [style.color]="textColor()"
-    [style.background-color]="backgroundColor()">
-    <si-custom-svg-icon [svgPath]="svgPath()!" [size]="svgSize()" />
-    <p>{{ text() }}</p>
-  </div>
-}
+@switch (selectedType) {
+  @case ('text') {
+    <div
+      class="item-container"
+      [style.color]="textColor()"
+      [style.background-color]="backgroundColor()">
+      <si-custom-svg-icon [svgPath]="svgPath()!" [size]="svgSize()" />
+      <p>{{ text() }}</p>
+    </div>
+  }
 
-@if (selectedType === 'compass') {
-  <div class="item-container" [style.background-color]="backgroundColor()">
-    <img src="/images/boussole.png" width="200" height="200" class="compass" />
-  </div>
-}
+  @case ('compass') {
+    <div class="item-container" [style.background-color]="backgroundColor()">
+      <img src="/images/boussole.png" width="200" height="200" class="compass" />
+    </div>
+  }
 
-@if (selectedType === 'form') {
-  <div class="item-container mail-bouncing"
-       [style.background-color]="backgroundColor()" (click)="updateActiveForm()">
-    <si-custom-svg-icon svgPath="mail" [size]="64" />
-  </div>
+  @case ('form') {
+    <div class="item-container mail-bouncing"
+         [style.background-color]="backgroundColor()" (click)="updateActiveForm()">
+      <si-custom-svg-icon svgPath="mail" [size]="64" />
+    </div>
+  }
 }

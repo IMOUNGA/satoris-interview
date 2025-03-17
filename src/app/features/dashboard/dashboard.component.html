@@ -8,33 +8,39 @@
         [title]="user.name.first + ' ' + user.name.last.toUpperCase()"
         [picture]="user.picture.large"/>
     </div>
+
     <div class="item item-2">
       <si-dashboard-item type="text" [text]="user.gender" backgroundColor="green" svgPath="gender" [svgSize]="48"/>
     </div>
+
     <div class="item item-3">
       <si-dashboard-item type="form" backgroundColor="orange" svgPath="city"
                          [activeForm]="initialActiveForm"
                          (onActiveFormUpdate)="onActiveFormUpdate($event)"/>
     </div>
+
     <div class="item item-4">
-      <si-dashboard-item type="compass" />
+      <si-dashboard-item type="compass"/>
     </div>
+
     <div class="item item-5">
       <si-dashboard-item-picture
         description="Découvrez mes amis"
         picture="/images/image-exemple.jpg"
         (onClick)="onActiveFriendsListUpdate($event)"/>
     </div>
+
     <div class="item item-6">
       <si-embed-google-maps
         [street]="user.location.street.name"
         [num]="user.location.street.number"
-        [city]="user.location.city" />
+        [city]="user.location.city"/>
     </div>
   </div>
+
   <si-form-contact *ngIf="initialActiveForm" [(activeForm)]="initialActiveForm"/>
   <si-friends-modal
     *ngIf="initialActiveFriendsList"
     [(activeModal)]="initialActiveFriendsList"
-    [friendsList]="users" />
+    [friendsList]="users"/>
 </div>

@@ -1,7 +1,8 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, Signal} from '@angular/core';
 import {UserService} from './core/services/user/user.service';
 import {DashboardComponent} from './features/dashboard/dashboard.component';
 import {IntroductionComponent} from './features/introduction/introduction.component';
+import {UserModel} from './entities/user.model';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +14,12 @@ import {IntroductionComponent} from './features/introduction/introduction.compon
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  private userService = inject(UserService);
-  protected user = this.userService.getSingleUser();
-  protected usersList = this.userService.getSeveralUsers(4);
+  private userService: UserService = inject(UserService);
+  protected user: Signal<UserModel | null> = this.userService.getSingleUser();
+  protected usersList: Signal<UserModel[] | null> = this.userService.getSeveralUsers(4);
   showDashboard = false;
 
-  ngOnInit() {
+  ngOnInit(): void {
     setTimeout(() => {
       this.showDashboard = true;
     }, 5000);
