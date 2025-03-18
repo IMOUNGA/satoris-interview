@@ -24,6 +24,11 @@ import {UserModel} from '../../entities/user.model';
 export class DashboardComponent {
   /** This is a dashboard component. It's the big manager wich can create dashboard-items-* */
 
+  /** 💡Evolution: This Dashboard Component could take a list of items and render them
+   *     -> items: DashboardItem = [ {type: ItemType, text: string, description: string, picture: string, etc} ]
+   *     This way, the dashboard component will be able to render any kind of item with no limitations
+   * */
+
   userLoad: InputSignal<UserModel> = input.required<UserModel>();
   usersList: InputSignal<UserModel[]> = input.required<UserModel[]>();
   initialActiveForm: boolean = false;
